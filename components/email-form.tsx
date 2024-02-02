@@ -17,7 +17,7 @@ const FormSchema = z.object({
     twitter: z.string().regex(/^@?(\w){1,15}$/, {
         message: "Invalid Twitter handle.",
     }),
-    ordinalsAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, {
+    ordinalsAddress: z.string().regex(/^bc?[a-zA-Z0-9]{61}$/, {
         message: "Invalid ordinals address.",
     }),
 });

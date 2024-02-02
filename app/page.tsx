@@ -1,5 +1,3 @@
-import Image from "next/image";
-import {Button} from "@/components/ui/button";
 import {EmailForm} from "@/components/email-form";
 export default function Home() {
   return (
@@ -47,21 +45,11 @@ export default function Home() {
 const styles = {
     backgroundImage: {
         backgroundImage: "url('/sunrise.webp')",
-        // backgroundImage: "url('/darkBlueCircle-transformed.png')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundOpacity: '0.1',
         // height: '100vh'
     },
-    // backgroundImage2: {
-    //     backgroundImage: "url('/darkBlueCircle.png')",
-    //     backgroundRepeat: 'no-repeat',
-    //     backgroundSize: 'cover',
-    //     height: '100vh',
-    //     display: 'flex',
-    //     alignItems: 'center',
-    //     justifyContent: 'center'
-    // }
 }
 
 //bg-slate-950
