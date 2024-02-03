@@ -5,10 +5,10 @@ import {z} from "zod"
 
 import {Button} from "@/components/ui/button"
 import {
-    Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage,
+    Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form"
 import {Input} from "@/components/ui/input"
-import {toast} from "@/components/ui/use-toast"
+import {toast} from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
     username: z.string().email({
@@ -31,13 +31,28 @@ export function EmailForm() {
         },
     })
 
-    function onSubmit(data: z.infer<typeof FormSchema>) {
-        toast({
-            title: "You submitted the following values:",
-            description: (<pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-      <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    </pre>),
-        })
+    async function onSubmit(data: z.infer<typeof FormSchema>) {
+        const { username, twitter, ordinalsAddress } = data;
+
+        try {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbzT7NvpO49JYQkN1nvQ7FlndjmHEWoMGcNknOP_qgzorfAVyc7HZyRIqvslATqsXhbeoQ/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: username, twitter, ordinalAddress: ordinalsAddress }),
+            });
+            toast({
+                title: "Welcome!",
+                description: "Your form has been submitted. Welcome to RunePro!",
+                duration: 5000,
+            });
+            // After the response comes back, reset the form fields
+            form.reset();
+        } catch (error) {
+            console.error('There was an issue submitting your form.', error);
+        }
     }
 
     return (<Form {...form}>
