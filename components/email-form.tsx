@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/form"
 import {Input} from "@/components/ui/input"
 import {toast} from "@/components/ui/use-toast";
+import {useState} from "react";
 
 const FormSchema = z.object({
     username: z.string().email({
@@ -31,7 +32,10 @@ export function EmailForm() {
         },
     })
 
+    const [isLoading, setIsLoading] = useState(false);
+
     async function onSubmit(data: z.infer<typeof FormSchema>) {
+        setIsLoading(true);
         const { username, twitter, ordinalsAddress } = data;
 
         try {
@@ -48,9 +52,11 @@ export function EmailForm() {
                 description: "Your form has been submitted. Welcome to RunePro!",
                 duration: 5000,
             });
+            setIsLoading(false);
             // After the response comes back, reset the form fields
             form.reset();
         } catch (error) {
+            setIsLoading(false);
             console.error('There was an issue submitting your form.', error);
         }
     }
@@ -96,7 +102,7 @@ export function EmailForm() {
                             <FormMessage/>
                         </FormItem>)}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit" disabled={isLoading}>Submit</Button>
             </form>
         </Form>)
 }
