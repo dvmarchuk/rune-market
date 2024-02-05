@@ -1,5 +1,6 @@
 import {EmailForm} from "@/components/email-form";
 import {Toaster} from "@/components/ui/toaster";
+import {Button} from "@/components/ui/button";
 export default function Home() {
   return (
       <>
@@ -19,7 +20,20 @@ export default function Home() {
                               DeFi</h1>
                           <br/>
                           <div className="flex flex-col items-center justify-center text-center">
-                              <EmailForm></EmailForm>
+                            <span className="lg:block block">
+                                <h2 className="text-lg text-center lg:whitespace-nowrap whitespace-normal">
+                                    The white list application is closed now.&nbsp;
+                                    <br className="md:inline hidden"/>Stay tuned for next steps, and follow us on X&nbsp;
+                                    <br className="md:inline hidden"/>to keep an eye out for other ways to join!
+                                </h2>
+                            </span>
+                              <br/>
+                              <a href="https://twitter.com/Rune_Pro" target="_blank" rel="noopener noreferrer">
+                                  <Button className="bg-slate-950" size={"lg"} variant={"outline"}>
+                                      <span>Follow on X</span>
+                                  </Button>
+                              </a>
+                              {/*<EmailForm></EmailForm>*/}
                           </div>
                           {/*<h2 className=" font-semibold text-white">*/}
                           {/*    Join the next generation of selling and buying Runes*/}
