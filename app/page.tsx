@@ -22,7 +22,7 @@ export default function Home() {
                           <div className="flex flex-col items-center justify-center text-center">
                             <span className="lg:block block">
                                 <h2 className="text-lg text-center lg:whitespace-nowrap whitespace-normal">
-                                    The white list application is closed now.&nbsp;
+                                    The white list application is now closed.&nbsp;
                                     <br className="md:inline hidden"/>Stay tuned for next steps, and follow us on X&nbsp;
                                     <br className="md:inline hidden"/>to keep an eye out for other ways to join!
                                 </h2>
