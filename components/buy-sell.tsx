@@ -3,11 +3,10 @@
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import React, {SetStateAction, useEffect, useState} from 'react';
-import MarketData from "@/components/bid-table";
 async function putData(address: string, type: string, amount: number, price: number): Promise<void> {
     const response = await fetch(`https://runepro-psbt.onrender.com/make-psbt?address=${address}&type=${type}&amount=${amount}&price=${price}`, {
     // const response = await fetch(`https://runepro-psbt.onrender.com/make-psbt?address=tb1p8yfc7znlkfdmlt2d77h9x7fp3f0p6vdec4r644kcd0jeafgkz7aq2zaxvg&type=bid&amount=1&price=123`, {
-        method: 'POST',
+        method: 'GET',
     });
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
