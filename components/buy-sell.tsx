@@ -65,9 +65,8 @@ export default function BuySell() {
                            onChange={e => setAmount(Number(e.target.value))}
                     ></Input>
 
-
                     {/*total*/}
-                    <Input type="number" placeholder="Total"></Input>
+                    <Input type="number" value={`${price * amount}`} readOnly></Input>
                 </div>
 
 
@@ -75,7 +74,7 @@ export default function BuySell() {
 
             <Button
                 onClick={() => putData(walletAddress, selectedButton, amount, price)}>
-                Put Data
+                Submit Order
             </Button>
 
             {/*<div>*/}

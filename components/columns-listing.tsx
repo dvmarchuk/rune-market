@@ -47,8 +47,8 @@ export type Bid = {
     _id: string
     type: string
     tick: string
-    amount: number
-    price: number
+    amount: number | null
+    price: number | null
     owner: string
 }
 

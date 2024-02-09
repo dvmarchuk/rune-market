@@ -20,6 +20,7 @@ export default async function MarketData() {
         data.sort((a, b) => a.type.localeCompare(b.type))
     );
 
+
     // Add custom rows
     const dataWithCustomRows = [];
     let previousType = null;
