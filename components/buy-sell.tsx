@@ -13,7 +13,7 @@ async function putData(address: string, type: string, amount: number, price: num
     }
 }
 export default function BuySell() {
-    const [selectedButton, setSelectedButton] = useState('buy');
+    const [selectedButton, setSelectedButton] = useState('bid');
     const [price, setPrice] = useState(0); // Add this line
     const [amount, setAmount] = useState(0); // Add this line
     const [walletAddress, setWalletAddress] = useState('');
@@ -36,14 +36,14 @@ export default function BuySell() {
 
                 <div className="flex justify-between mb-1">
                     <Button
-                        className={`bg-slate-950 outline outline-gray-400 w-1/2 rounded-r-none hover:bg-green-800 ${selectedButton === 'buy' ? 'bg-green-800 ' : ''}`}
-                        onClick={() => handleClick('buy')}
+                        className={`bg-slate-950 outline outline-gray-400 w-1/2 rounded-r-none hover:bg-green-800 ${selectedButton === 'bid' ? 'bg-green-800 ' : ''}`}
+                        onClick={() => handleClick('bid')}
                     >
                         Buy
                     </Button>
                     <Button
-                        className={`bg-slate-950 outline outline-gray-400 w-1/2 rounded-l-none hover:bg-red-800 ${selectedButton === 'sell' ? 'bg-red-800' : ''}`}
-                        onClick={() => handleClick('sell')}
+                        className={`bg-slate-950 outline outline-gray-400 w-1/2 rounded-l-none hover:bg-red-800 ${selectedButton === 'ask' ? 'bg-red-800' : ''}`}
+                        onClick={() => handleClick('ask')}
                     >
                         Sell
                     </Button>
