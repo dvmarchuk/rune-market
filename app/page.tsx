@@ -1,6 +1,4 @@
-import {EmailForm} from "@/components/email-form";
 import {Toaster} from "@/components/ui/toaster";
-import {Button} from "@/components/ui/button";
 import {columns, Payment} from "@/components/columns-listing";
 import {DataTable} from "@/components/listing-table";
 async function getData(): Promise<Payment[]> {
@@ -10,19 +8,19 @@ async function getData(): Promise<Payment[]> {
             id: "728ed52f",
             // icon: "100",
             ticker: "BTC2",
-            price: 1,
+            price: 23408,
         },
         {
             id: "56krtryt",
             // icon: "100",
-            ticker: "ETHQ",
-            price: 1,
+            ticker: "TEST",
+            price: 0,
         },
         {
             id: "asgg43ger",
             // icon: "100",
-            ticker: "SOLA",
-            price: 1,
+            ticker: "TEST",
+            price: 0 ,
         },
     ]
 }
