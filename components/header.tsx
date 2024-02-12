@@ -7,7 +7,7 @@ import UniSatWalletConnectButton from "@/components/unisat-connect";
 export function Header() {
     return (
         <header className='bg-slate-950'>
-            <div className="flex justify-between p-5 col-auto font-mono">
+            <div className="container flex justify-between p-5 col-auto font-mono">
                 <div className="flex col-auto items-center">
                     <Image src='/whiteLogo.png' width={25} height={25} alt="Logo" />
                     <h1 style={{color: "white"}}>RunePro</h1>

@@ -33,13 +33,14 @@ export default async function Home() {
           <main className="h-screen bg-slate-950" >{/*style={styles.backgroundImage}*/}
               <div className="font-mono">
                   <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
+                      // display: 'flex',
+                      // flexDirection: 'column',
+                      // alignItems: 'center',
+                      // justifyContent: 'center',
                       height: '100vh'
                   }}>
-                      <div className="container mx-auto py-10">
+                      <div className="container pt-8">
+                          <span className="text-xl">Available Tickers</span>
                           <DataTable columns={columns} data={data}/>
                       </div>
                   </div>
