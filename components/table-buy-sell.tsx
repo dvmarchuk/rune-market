@@ -73,7 +73,9 @@ export function BuySellTable<TData, TValue>({
                                         </TableCell>
                                     ))}
                                     <TableCell> {/* Add a new cell for the button */}
+                                        {/*@ts-ignore*/}
                                         {row.original.type === 'bid' && <Button>Buy</Button>}
+                                        {/*@ts-ignore*/}
                                         {row.original.type === 'ask' && <Button>Sell</Button>}
                                     </TableCell>
                                     {/*<TableCell>*/}

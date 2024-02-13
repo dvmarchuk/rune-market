@@ -80,6 +80,7 @@ export default function BuySell() {
                         .then(data => {
                             console.log('Success:', data);
                             console.log('Success:', data.psbt);
+                            // @ts-ignore
                             window.unisat.pushPsbt(data.psbt);
                         })
                         .catch(error => {
