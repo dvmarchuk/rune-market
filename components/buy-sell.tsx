@@ -3,14 +3,17 @@
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import React, {SetStateAction, useEffect, useState} from 'react';
-async function putData(address: string, type: string, amount: number, price: number): Promise<void> {
+
+async function putData(address: string, type: string, amount: number, price: number): Promise<any> {
     const response = await fetch(`https://runepro-psbt.onrender.com/make-psbt?address=${address}&type=${type}&amount=${amount}&price=${price}`, {
-    // const response = await fetch(`https://runepro-psbt.onrender.com/make-psbt?address=tb1p8yfc7znlkfdmlt2d77h9x7fp3f0p6vdec4r644kcd0jeafgkz7aq2zaxvg&type=bid&amount=1&price=123`, {
         method: 'GET',
     });
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const data = await response.json();
+    console.log('test', data);
+    return data;
 }
 export default function BuySell() {
     const [selectedButton, setSelectedButton] = useState('bid');
@@ -72,7 +75,18 @@ export default function BuySell() {
             </div>
 
             <Button
-                onClick={() => putData(walletAddress, selectedButton, amount, price)}>
+                onClick={() => {
+                    putData(walletAddress, selectedButton, amount, price)
+                        .then(data => {
+                            console.log('Success:', data);
+                            console.log('Success:', data.psbt);
+                            window.unisat.pushPsbt(data.psbt);
+                        })
+                        .catch(error => {
+                            console.error('Failed to fetch data:', error);
+                        });
+                }}
+            >
                 Submit Order
             </Button>
 

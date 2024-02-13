@@ -1,10 +1,6 @@
-import {DataTable} from "@/components/listing-table";
-import {columns} from "@/components/columns-listing";
 import {Toaster} from "@/components/ui/toaster";
 import BuySell from "@/components/buy-sell";
 import MarketData from "@/components/bid-table";
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
 
 export default function btc2() {
     return (
@@ -13,9 +9,9 @@ export default function btc2() {
                 <div className="font-mono">
                     <div style={{
                         height: '100vh'
-                    }} className="md:flex md:flex-row">
-                        <div className="md:basis-1/2">01</div>
-                        <div className="md:basis-1/4 m-4">
+                    }} className="md:flex md:flex-row container">
+                        {/*<div className="md:basis-1/4">01</div>*/}
+                        <div className="md:basis-1/2 m-4">
                             {/*    make the buy sell bid thing here*/}
                             {/*    make a reusable row*/}
                             {/*    ngfor that crap for all the listing*/}
