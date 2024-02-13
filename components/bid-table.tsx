@@ -44,6 +44,7 @@ export default function MarketData() {
             setDataWithCustomRows(dataWithCustomRows);
         });
     }, []);
+    // @ts-ignore
     const filteredData = dataWithCustomRows.filter(item => displayType === 'all' || item.type === displayType);
 
     return (
